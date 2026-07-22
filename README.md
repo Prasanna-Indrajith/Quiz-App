@@ -66,6 +66,15 @@ runs.
 GitHub Actions also builds desktop packages on pushes and pull requests to
 `main`. The workflow uploads Linux and Windows installers as run artifacts.
 
+## GitHub Pages
+
+GitHub Pages must deploy the Vite production output from `dist/`. The
+repository includes a `GitHub Pages` workflow that builds the app and deploys the
+generated static files with `actions/deploy-pages`.
+
+In GitHub repository settings, set **Pages > Build and deployment > Source** to
+**GitHub Actions**.
+
 ## Supported Quiz Formats
 
 ### JSON
