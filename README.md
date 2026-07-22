@@ -72,5 +72,6 @@ The `answers` column is a JSON array encoded inside a CSV field.
 
 ## Privacy
 
-Quiz content is parsed in the browser. Version 1 stores only attempt summaries
-in `localStorage`; active quiz attempts are not persisted.
+Quiz content is parsed in the browser. The app stores active quiz progress and
+attempt summaries in `localStorage` so an in-progress quiz can be restored after
+a browser reload. Clearing site data removes this local history and progress.

@@ -4,6 +4,7 @@ import { ProgressBar } from "../../components/ProgressBar/ProgressBar";
 import { TimerDisplay } from "../../components/TimerDisplay/TimerDisplay";
 import type { QuizAttempt } from "../../domain/attempt.types";
 import type { Quiz } from "../../domain/quiz.types";
+import { useBeforeUnloadWarning } from "../../hooks/useBeforeUnloadWarning";
 import { useElapsedTimer } from "../../hooks/useElapsedTimer";
 import { t } from "../../i18n";
 import { AnswerList } from "./AnswerList";
@@ -25,6 +26,8 @@ export function QuizPage({
   onFinish,
   onLoadAnother,
 }: QuizPageProps) {
+  useBeforeUnloadWarning(true);
+
   const elapsedSeconds = useElapsedTimer(attempt.startedAt, true);
   const currentQuestionId = attempt.questionOrder[attempt.currentQuestionIndex];
   const question = quiz.questions.find((item) => item.id === currentQuestionId);
