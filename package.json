@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "description": "Local desktop quiz application for JSON and CSV quizzes.",
-  "author": "Local Quiz Maintainers",
+  "author": {
+    "name": "Local Quiz Maintainers",
+    "email": "maintainers@localquiz.app"
+  },
   "type": "module",
   "main": "dist-electron/main.js",
   "scripts": {
