@@ -1,0 +1,3 @@
+quizName,type,question,answers,correctAnswer,definition
+Sample Quiz,multiple-choice,What is the capital of France?,"[""London"",""Paris"",""Berlin"",""Madrid""]",2,Paris is the capital of France.
+Sample Quiz,true-false,The Earth is flat.,"[""True"",""False""]",2,Earth is approximately spherical.

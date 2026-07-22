@@ -1,0 +1,361 @@
+{
+  "quizName": "FT 3202 Occupational Health & Safety - 30 Question Practice Quiz",
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "Which statement best defines a hazard?",
+      "answers": [
+        "The probability that an injury will occur",
+        "Any source, situation, or condition with the potential to cause harm",
+        "An event that has already caused injury",
+        "The frequency and duration of exposure"
+      ],
+      "correctAnswer": 2,
+      "definition": "A hazard is any source, situation, or condition with the potential to cause damage, harm, or adverse health effects."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which statement best defines risk?",
+      "answers": [
+        "The potential to cause harm",
+        "The chance of harm occurring together with the severity of the outcome",
+        "A workplace event that causes no injury",
+        "A safety rule established by management"
+      ],
+      "correctAnswer": 2,
+      "definition": "Risk is the likelihood or probability that a hazard will cause harm, considered together with the severity of the possible outcome."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What does exposure refer to in occupational health and safety?",
+      "answers": [
+        "The number of hazards in a workplace",
+        "The frequency and duration for which a person is subjected to a hazard",
+        "The seriousness of an injury",
+        "The legal responsibility of an employer"
+      ],
+      "correctAnswer": 2,
+      "definition": "Exposure is the frequency and duration for which a person is subjected to a hazard, and it provides a quantitative measure of risk."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is a biological hazard?",
+      "answers": [
+        "Noise",
+        "Bacteria",
+        "Poor workstation design",
+        "Stress"
+      ],
+      "correctAnswer": 2,
+      "definition": "Biological hazards include bacteria, viruses, insects, plants, birds, animals, and humans."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is a chemical hazard?",
+      "answers": [
+        "Toxic pesticide",
+        "Repetitive movement",
+        "Harassment",
+        "Extreme noise"
+      ],
+      "correctAnswer": 1,
+      "definition": "Chemical hazards arise from the chemical and toxic properties of substances such as pesticides, corrosives, and flammable materials."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is a physical hazard?",
+      "answers": [
+        "Radiation",
+        "Bullying",
+        "Bacteria",
+        "Repetitive movement"
+      ],
+      "correctAnswer": 1,
+      "definition": "Physical hazards include radiation, magnetic fields, extreme temperatures, pressure, noise, and machinery."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is an ergonomic hazard?",
+      "answers": [
+        "Improper workstation setup",
+        "Virus exposure",
+        "Chemical poisoning",
+        "Workplace violence"
+      ],
+      "correctAnswer": 1,
+      "definition": "Ergonomic hazards include repetitive movements, awkward postures, manual handling, and improper workstation setup."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is a psychosocial hazard?",
+      "answers": [
+        "Noise",
+        "Stress and anxiety",
+        "Toxic chemicals",
+        "Radiation"
+      ],
+      "correctAnswer": 2,
+      "definition": "Psychosocial hazards include stress, anxiety, violence, bullying, fatigue, poor support, and lack of role clarity."
+    },
+    {
+      "type": "true-false",
+      "question": "Health is the state of being free from illness or injury.",
+      "answers": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 1,
+      "definition": "Health is defined as the state of being free from illness or injury."
+    },
+    {
+      "type": "true-false",
+      "question": "Safety is the state of being safe from harm or other danger.",
+      "answers": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 1,
+      "definition": "Safety refers to the state of being protected from harm or other danger."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which statement best describes an incident?",
+      "answers": [
+        "Only an event that causes injury",
+        "Any event that exposes a person to serious risk to health or safety",
+        "A planned safety inspection",
+        "A legal requirement"
+      ],
+      "correctAnswer": 2,
+      "definition": "An incident is any event that exposes a person to a serious risk to health or safety, whether or not actual harm occurs."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which statement best describes an accident?",
+      "answers": [
+        "A harmless event",
+        "A workplace incident that is physically or mentally harmful to a person",
+        "A hazard that has not yet occurred",
+        "A safety policy"
+      ],
+      "correctAnswer": 2,
+      "definition": "An accident is a workplace incident that causes physical or mental harm and should ideally be foreseen and avoided."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "According to the lecture, which group is often not adequately covered by existing OSH services and law?",
+      "answers": [
+        "Formal workers",
+        "Informal workers",
+        "Managers",
+        "Engineers"
+      ],
+      "correctAnswer": 2,
+      "definition": "Informal workers are often inadequately covered by existing occupational safety and health services and laws."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following was listed as a common workplace injury or cause?",
+      "answers": [
+        "Slips",
+        "Trips",
+        "Falls",
+        "All of the above"
+      ],
+      "correctAnswer": 4,
+      "definition": "The lecture lists slips, trips, falls, and work-related stress as common workplace injuries and causes."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the first stage shown in the risk management framework?",
+      "answers": [
+        "Monitor",
+        "Report",
+        "Identify",
+        "Manage"
+      ],
+      "correctAnswer": 3,
+      "definition": "The risk management framework begins with identifying hazards before measuring, managing, monitoring, and reporting."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which sequence best represents the risk management framework?",
+      "answers": [
+        "Identify, Measure, Manage, Monitor, Report",
+        "Measure, Identify, Report, Monitor, Manage",
+        "Manage, Report, Identify, Measure, Monitor",
+        "Report, Monitor, Manage, Measure, Identify"
+      ],
+      "correctAnswer": 1,
+      "definition": "The framework follows the sequence Identify, Measure, Manage, Monitor, and Report."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the purpose of measuring risks?",
+      "answers": [
+        "To eliminate all hazards immediately",
+        "To evaluate exposure and potential injury outcomes",
+        "To assign blame after an accident",
+        "To replace legal requirements"
+      ],
+      "correctAnswer": 2,
+      "definition": "Risk measurement evaluates actual or potential exposure and possible injury outcomes, providing a basis for risk evaluation and control."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is a valid source of information for risk measurement?",
+      "answers": [
+        "Manufacturer manuals",
+        "Previous incident reports",
+        "Safety data sheets",
+        "All of the above"
+      ],
+      "correctAnswer": 4,
+      "definition": "Risk measurement may use manuals, manufacturer information, incident records, worker knowledge, legal standards, safety data sheets, testing results, and expert advice."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "A risk matrix ranks hazards mainly using which two factors?",
+      "answers": [
+        "Cost and time",
+        "Probability and severity",
+        "Training and supervision",
+        "Age and experience"
+      ],
+      "correctAnswer": 2,
+      "definition": "A risk matrix is a two-factor method based on probability and severity."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the lecture, probability refers to:",
+      "answers": [
+        "How expensive the control measure is",
+        "How often a hazard can cause harm",
+        "How serious the injury is",
+        "How long the investigation takes"
+      ],
+      "correctAnswer": 2,
+      "definition": "Probability describes how often a hazard is likely to cause harm."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "In the lecture, severity refers to:",
+      "answers": [
+        "How often harm occurs",
+        "How bad the outcome of harm could be",
+        "How many workers are present",
+        "How long a task takes"
+      ],
+      "correctAnswer": 2,
+      "definition": "Severity describes how serious the outcome of harm caused by a hazard may be."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which injury is classified as high severity?",
+      "answers": [
+        "Minor irritation",
+        "Short-term dizziness",
+        "Major fracture",
+        "First-aid-only injury"
+      ],
+      "correctAnswer": 3,
+      "definition": "High-severity outcomes include major fractures, poisoning, significant blood loss, serious head injury, and fatal disease."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which injury is classified as medium severity?",
+      "answers": [
+        "Sprain or strain requiring days off work",
+        "Fatal disease",
+        "First-aid-only irritation",
+        "No injury"
+      ],
+      "correctAnswer": 1,
+      "definition": "Medium severity includes sprains, strains, localized burns, dermatitis, asthma, and injuries requiring days away from work."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which injury is classified as low severity?",
+      "answers": [
+        "Serious head injury",
+        "Major fracture",
+        "First-aid-only injury",
+        "Fatal poisoning"
+      ],
+      "correctAnswer": 3,
+      "definition": "Low severity includes injuries requiring first aid only, short-term pain, irritation, or dizziness."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What-if analysis is best described as:",
+      "answers": [
+        "A legal prosecution method",
+        "A structured question-and-answer brainstorming method",
+        "A medical diagnosis method",
+        "A financial auditing method"
+      ],
+      "correctAnswer": 2,
+      "definition": "What-if analysis is a structured brainstorming method that identifies hazards by asking what can go wrong and considering likelihood, consequences, and solutions."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "The central question in What-if analysis is:",
+      "answers": [
+        "Who should be blamed?",
+        "What can go wrong in the given scenario?",
+        "How much will the process cost?",
+        "When will production increase?"
+      ],
+      "correctAnswer": 2,
+      "definition": "What-if analysis begins by asking what can go wrong in a given scenario."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which person would be suitable for a What-if analysis team?",
+      "answers": [
+        "Operating personnel",
+        "Maintenance personnel",
+        "Safety representative",
+        "All of the above"
+      ],
+      "correctAnswer": 4,
+      "definition": "A suitable team can include operating and maintenance personnel, engineers, chemists, specialists, and safety representatives."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which document may be gathered before a What-if analysis?",
+      "answers": [
+        "Piping and Instrument Diagram",
+        "Operational manuals",
+        "Material Safety Data Sheets",
+        "All of the above"
+      ],
+      "correctAnswer": 4,
+      "definition": "Relevant information includes site assessments, P&IDs, photographs, design documents, operating and maintenance procedures, and MSDS documents."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "What is the effect of choosing a narrow boundary for a What-if analysis?",
+      "answers": [
+        "It gives a more detailed analysis",
+        "It gives only general recommendations",
+        "It eliminates the need for a team",
+        "It prevents documentation"
+      ],
+      "correctAnswer": 1,
+      "definition": "A narrow focus produces a more detailed analysis, while a larger boundary provides broader overview recommendations."
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which of the following is a disadvantage of What-if analysis?",
+      "answers": [
+        "It requires specialized software",
+        "It cannot be used during maintenance",
+        "It depends heavily on the intuition and viewpoint of the review team",
+        "Its results are never immediately available"
+      ],
+      "correctAnswer": 3,
+      "definition": "What-if analysis can be subjective and may miss hazards if the review team does not ask all appropriate questions."
+    }
+  ]
+}

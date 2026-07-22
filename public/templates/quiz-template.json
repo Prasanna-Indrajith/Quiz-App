@@ -1,0 +1,19 @@
+{
+  "quizName": "Sample Quiz",
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the capital of France?",
+      "answers": ["London", "Paris", "Berlin", "Madrid"],
+      "correctAnswer": 2,
+      "definition": "Paris is the capital of France."
+    },
+    {
+      "type": "true-false",
+      "question": "The Earth is flat.",
+      "answers": ["True", "False"],
+      "correctAnswer": 2,
+      "definition": "Earth is approximately spherical."
+    }
+  ]
+}
