@@ -408,6 +408,53 @@ progress {
   line-height: 1.35;
 }
 
+.definition-panel {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #f7fbff;
+  overflow: hidden;
+}
+
+.definition-panel summary {
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+  padding: 14px 16px;
+}
+
+.definition-panel summary::after {
+  content: "+";
+  float: right;
+  font-weight: 900;
+}
+
+.definition-panel[open] summary::after {
+  content: "-";
+}
+
+.definition-panel div {
+  border-top: 1px solid var(--color-border);
+  padding: 0 16px;
+  animation: slide-down 160ms ease-out;
+}
+
+.definition-panel p {
+  margin: 14px 0;
+  line-height: 1.55;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .answer-list {
   display: grid;
   gap: 10px;
@@ -436,20 +483,19 @@ progress {
   margin-top: 3px;
 }
 
-.feedback {
-  border: 1px solid #e2c27b;
-  border-radius: 8px;
-  background: #fff8e7;
-  padding: 16px;
+.answer-correct-selected {
+  border-color: #58ad78;
+  background: #e5f6eb;
 }
 
-.feedback-correct {
-  border-color: #a8d8c2;
-  background: var(--color-success-bg);
+.answer-wrong-selected {
+  border-color: #d06c6c;
+  background: #fff0f0;
 }
 
-.feedback h3 {
-  margin-top: 0;
+.answer-correct {
+  border-color: #d8b34c;
+  background: #fff6d9;
 }
 
 .score-panel {

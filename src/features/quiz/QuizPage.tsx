@@ -8,7 +8,6 @@ import { useBeforeUnloadWarning } from "../../hooks/useBeforeUnloadWarning";
 import { useElapsedTimer } from "../../hooks/useElapsedTimer";
 import { t } from "../../i18n";
 import { AnswerList } from "./AnswerList";
-import { FeedbackPanel } from "./FeedbackPanel";
 import type { AttemptAction } from "./quiz.reducer";
 
 interface QuizPageProps {
@@ -70,6 +69,12 @@ export function QuizPage({
 
         <article className="question-panel">
           <h2>{question.prompt}</h2>
+          <details className="definition-panel">
+            <summary>Definition</summary>
+            <div>
+              <p>{question.definition}</p>
+            </div>
+          </details>
           <AnswerList
             question={question}
             attemptQuestion={attemptQuestion}
@@ -95,7 +100,6 @@ export function QuizPage({
           >
             {t("submitAnswer")}
           </Button>
-          <FeedbackPanel question={question} attemptQuestion={attemptQuestion} />
         </article>
 
         <div className="button-row">
