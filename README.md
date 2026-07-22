@@ -117,7 +117,7 @@ The `answers` column is a JSON array encoded inside a CSV field.
 ## Data Rules
 
 - `quizName` is required.
-- A quiz must contain 1 to 100 questions.
+- A quiz must contain 1 to 500 questions.
 - Supported question types are `multiple-choice` and `true-false`.
 - `correctAnswer` is a one-based answer position in imported data.
 - Every question needs a non-empty definition.

@@ -1,5 +1,5 @@
 export const QUIZ_LIMITS = {
-  maxQuestions: 100,
+  maxQuestions: 500,
   maxAnswersPerQuestion: 50,
   maxQuizNameLength: 150,
   maxQuestionTextLength: 2_000,

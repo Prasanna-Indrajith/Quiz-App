@@ -61,16 +61,26 @@ describe("validateRawQuiz", () => {
     );
   });
 
-  it("rejects quizzes with more than 100 questions", () => {
+  it("rejects quizzes with more than 500 questions", () => {
     const result = validateRawQuiz({
       quizName: "Large Quiz",
-      questions: Array.from({ length: 101 }, () => validQuiz.questions[0]),
+      questions: Array.from({ length: 501 }, () => validQuiz.questions[0]),
     });
 
     expect(result.valid).toBe(false);
     expect(result.errors).toContainEqual(
       expect.objectContaining({ code: "quiz.tooManyQuestions" }),
     );
+  });
+
+  it("accepts quizzes with more than 100 questions", () => {
+    const result = validateRawQuiz({
+      quizName: "Large Quiz",
+      questions: Array.from({ length: 150 }, () => validQuiz.questions[0]),
+    });
+
+    expect(result.valid).toBe(true);
+    expect(result.value?.questions).toHaveLength(150);
   });
 
   it("requires true/false questions to have exactly two answers", () => {
