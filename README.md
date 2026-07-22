@@ -66,6 +66,17 @@ runs.
 GitHub Actions also builds desktop packages on pushes and pull requests to
 `main`. The workflow uploads Linux and Windows installers as run artifacts.
 
+To publish desktop installers for users, create and push a version tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The `Release desktop apps` workflow builds Linux and Windows packages, creates a
+GitHub Release, and attaches the generated `.AppImage`, `.deb`, and `.exe`
+files.
+
 ## GitHub Pages
 
 GitHub Pages must deploy the Vite production output from `dist/`. The
