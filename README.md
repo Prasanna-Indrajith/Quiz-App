@@ -63,6 +63,9 @@ Windows installer builds from Linux may require additional system tooling such a
 Wine. Electron packaging also downloads the Electron runtime the first time it
 runs.
 
+GitHub Actions also builds desktop packages on pushes and pull requests to
+`main`. The workflow uploads Linux and Windows installers as run artifacts.
+
 ## Supported Quiz Formats
 
 ### JSON

@@ -7,3 +7,6 @@ coverage
 *.local
 *.tsbuildinfo
 .*/
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
