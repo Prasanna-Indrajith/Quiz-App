@@ -8,5 +8,5 @@ export const en = {
   finishQuiz: "Finish quiz",
   retryQuiz: "Retry quiz",
   clearHistory: "Clear history",
-  languageEnglish: "English",
+  languageEnglish: "EN",
 } as const;

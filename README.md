@@ -33,6 +33,36 @@ Or run all checks:
 npm run check
 ```
 
+## Desktop Packaging
+
+The app includes a minimal Electron wrapper for local desktop builds.
+
+```bash
+npm run electron:start
+```
+
+Build unpacked desktop output:
+
+```bash
+npm run desktop:dir
+```
+
+Build Linux packages:
+
+```bash
+npm run desktop:linux
+```
+
+Build a Windows installer from a supported build host:
+
+```bash
+npm run desktop:win
+```
+
+Windows installer builds from Linux may require additional system tooling such as
+Wine. Electron packaging also downloads the Electron runtime the first time it
+runs.
+
 ## Supported Quiz Formats
 
 ### JSON

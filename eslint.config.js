@@ -6,7 +6,15 @@ import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 export default tseslint.config(
-  { ignores: ["dist", "coverage", "eslint.config.js"] },
+  {
+    ignores: [
+      "dist",
+      "dist-electron",
+      "release",
+      "coverage",
+      "eslint.config.js",
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
@@ -15,7 +23,11 @@ export default tseslint.config(
       ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
-        project: ["./tsconfig.app.json", "./tsconfig.node.json"],
+        project: [
+          "./tsconfig.app.json",
+          "./tsconfig.node.json",
+          "./tsconfig.electron.json",
+        ],
         tsconfigRootDir: import.meta.dirname,
       },
     },

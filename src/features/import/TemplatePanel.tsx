@@ -3,63 +3,51 @@ import {
   CSV_TEMPLATE,
   JSON_TEMPLATE,
 } from "../../infrastructure/download/templateDownload";
-import { downloadTextFile } from "../../utils/download";
 
 export function TemplatePanel() {
   return (
-    <section className="template-grid" aria-labelledby="templates-heading">
-      <h2 id="templates-heading">Templates</h2>
-      <TemplateCard
+    <section className="template-row" aria-label="Templates">
+      <span>Template</span>
+      <TemplateAction
         title="JSON"
         content={JSON_TEMPLATE}
-        filename="quiz-template.json"
-        mimeType="application/json"
       />
-      <TemplateCard
+      <TemplateAction
         title="CSV"
         content={CSV_TEMPLATE}
-        filename="quiz-template.csv"
-        mimeType="text/csv"
       />
     </section>
   );
 }
 
-interface TemplateCardProps {
+interface TemplateActionProps {
   title: string;
   content: string;
-  filename: string;
-  mimeType: string;
 }
 
-function TemplateCard({
+function TemplateAction({
   title,
   content,
-  filename,
-  mimeType,
-}: TemplateCardProps) {
+}: TemplateActionProps) {
   return (
-    <article className="template-card">
-      <h3>{title}</h3>
-      <pre>{content}</pre>
-      <div className="button-row">
+    <div className="template-actions">
+      <strong>{title}</strong>
+      <div className="template-copy">
         <Button
           type="button"
+          className="icon-button"
+          title={`Copy ${title} template`}
+          aria-label={`Copy ${title} template`}
           onClick={() => {
             void navigator.clipboard.writeText(content);
           }}
         >
-          Copy
+          ⧉
         </Button>
-        <Button
-          type="button"
-          onClick={() => {
-            downloadTextFile(filename, content, mimeType);
-          }}
-        >
-          Download
-        </Button>
+        <pre className="template-preview" aria-hidden="true">
+          {content}
+        </pre>
       </div>
-    </article>
+    </div>
   );
 }

@@ -101,21 +101,27 @@ export function QuizPage({
         <div className="button-row">
           <Button
             type="button"
+            className="icon-nav-button"
             disabled={attempt.currentQuestionIndex === 0}
+            title={t("previousQuestion")}
+            aria-label={t("previousQuestion")}
             onClick={() => {
               dispatch({ type: "PREVIOUS_QUESTION" });
             }}
           >
-            {t("previousQuestion")}
+            ‹
           </Button>
           <Button
             type="button"
+            className="icon-nav-button"
             disabled={attempt.currentQuestionIndex === attempt.questions.length - 1}
+            title={t("nextQuestion")}
+            aria-label={t("nextQuestion")}
             onClick={() => {
               dispatch({ type: "NEXT_QUESTION" });
             }}
           >
-            {t("nextQuestion")}
+            ›
           </Button>
           <Button
             type="button"

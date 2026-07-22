@@ -63,60 +63,59 @@ export function ImportPage({ onStartQuiz }: ImportPageProps) {
 
   return (
     <main className="app-shell">
-      <section className="panel">
-        <div className="page-header">
-          <div>
-            <h1>{t("appTitle")}</h1>
-            <p>
-              Load JSON or CSV quiz content locally. The full quiz is validated
-              before it can start.
-            </p>
-          </div>
+      <section className="panel import-panel">
+        <h1 className="sr-only">{t("appTitle")}</h1>
+        <div className="import-topbar">
           <LanguageSelector />
         </div>
 
-        <div className="two-column">
-          <section className="stack" aria-labelledby="import-heading">
-            <h2 id="import-heading">{t("importQuiz")}</h2>
-            <FileDropzone onFileSelect={handleFileSelect} />
-            <PasteInput
-              format={format}
-              value={source}
-              onFormatChange={setFormat}
-              onValueChange={setSource}
-            />
-            <Button
-              type="button"
-              variant="primary"
-              onClick={() => {
-                loadSource(source);
-              }}
-            >
-              Load quiz
-            </Button>
-            <ErrorList errors={errors} />
-            {loadedQuiz ? (
-              <section className="success-panel" aria-live="polite">
-                <h2>Quiz ready</h2>
-                <p>
-                  {loadedQuiz.name} contains {loadedQuiz.questions.length}{" "}
-                  {loadedQuiz.questions.length === 1 ? "question" : "questions"}.
-                </p>
-                <Button
-                  type="button"
-                  variant="primary"
-                  onClick={() => {
-                    onStartQuiz(loadedQuiz);
-                  }}
-                >
-                  {t("startQuiz")}
-                </Button>
-              </section>
-            ) : null}
-          </section>
-
+        <section className="stack" aria-labelledby="import-heading">
+          <h2 id="import-heading" className="import-title">
+            {t("importQuiz")}
+          </h2>
+          <div className="import-grid">
+            <div className="import-card">
+              <FileDropzone onFileSelect={handleFileSelect} />
+            </div>
+            <div className="import-card">
+              <PasteInput
+                format={format}
+                value={source}
+                onFormatChange={setFormat}
+                onValueChange={setSource}
+              />
+            </div>
+          </div>
           <TemplatePanel />
-        </div>
+          <Button
+            type="button"
+            variant="primary"
+            onClick={() => {
+              loadSource(source);
+            }}
+          >
+            Load quiz
+          </Button>
+          <ErrorList errors={errors} />
+          {loadedQuiz ? (
+            <section className="success-panel" aria-live="polite">
+              <h2>Quiz ready</h2>
+              <p>
+                {loadedQuiz.name} contains {loadedQuiz.questions.length}{" "}
+                {loadedQuiz.questions.length === 1 ? "question" : "questions"}.
+              </p>
+              <Button
+                type="button"
+                variant="primary"
+                onClick={() => {
+                  onStartQuiz(loadedQuiz);
+                }}
+              >
+                {t("startQuiz")}
+              </Button>
+            </section>
+          ) : null}
+        </section>
       </section>
     </main>
   );

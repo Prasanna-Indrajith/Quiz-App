@@ -14,28 +14,36 @@ export function PasteInput({
   onValueChange,
 }: PasteInputProps) {
   return (
-    <div className="stack">
-      <label className="field">
-        <span>Paste format</span>
-        <select
-          value={format}
-          onChange={(event) => {
-            onFormatChange(event.currentTarget.value as ImportFormat);
+    <div className="paste-panel">
+      <div className="format-toggle" aria-label="Paste format">
+        <button
+          type="button"
+          className={format === "json" ? "toggle-active" : ""}
+          onClick={() => {
+            onFormatChange("json");
           }}
         >
-          <option value="json">JSON</option>
-          <option value="csv">CSV</option>
-        </select>
-      </label>
+          JSON
+        </button>
+        <button
+          type="button"
+          className={format === "csv" ? "toggle-active" : ""}
+          onClick={() => {
+            onFormatChange("csv");
+          }}
+        >
+          CSV
+        </button>
+      </div>
       <label className="field">
-        <span>Pasted quiz content</span>
+        <span>Paste text</span>
         <textarea
           value={value}
-          rows={10}
+          rows={12}
           onChange={(event) => {
             onValueChange(event.currentTarget.value);
           }}
-          placeholder="Paste JSON or CSV quiz content here."
+          placeholder="Paste quiz text here"
         />
       </label>
     </div>

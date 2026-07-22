@@ -4,8 +4,12 @@ interface FileDropzoneProps {
 
 export function FileDropzone({ onFileSelect }: FileDropzoneProps) {
   return (
-    <label className="field">
-      <span>Quiz file</span>
+    <label className="dropzone">
+      <span className="dropzone-icon" aria-hidden="true">
+        ↑
+      </span>
+      <span className="dropzone-title">Drop quiz file</span>
+      <span className="dropzone-meta">or click to upload JSON/CSV</span>
       <input
         type="file"
         accept=".json,.csv,application/json,text/csv"
