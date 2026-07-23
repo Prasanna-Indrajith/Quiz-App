@@ -86,35 +86,35 @@ export function ImportPage({ onStartQuiz }: ImportPageProps) {
               />
             </div>
           </div>
-          <TemplatePanel />
+          <div className="import-meta-grid">
+            <TemplatePanel />
+            <section className="quiz-ready-card" aria-live="polite">
+              <span>Quiz details</span>
+              {loadedQuiz ? (
+                <strong>
+                  {loadedQuiz.name} · {loadedQuiz.questions.length}{" "}
+                  {loadedQuiz.questions.length === 1 ? "question" : "questions"}
+                </strong>
+              ) : (
+                <strong>No quiz loaded</strong>
+              )}
+            </section>
+          </div>
           <Button
             type="button"
             variant="primary"
             onClick={() => {
+              if (loadedQuiz) {
+                onStartQuiz(loadedQuiz);
+                return;
+              }
+
               loadSource(source);
             }}
           >
-            Load quiz
+            {loadedQuiz ? t("startQuiz") : "Load quiz"}
           </Button>
           <ErrorList errors={errors} />
-          {loadedQuiz ? (
-            <section className="success-panel" aria-live="polite">
-              <h2>Quiz ready</h2>
-              <p>
-                {loadedQuiz.name} contains {loadedQuiz.questions.length}{" "}
-                {loadedQuiz.questions.length === 1 ? "question" : "questions"}.
-              </p>
-              <Button
-                type="button"
-                variant="primary"
-                onClick={() => {
-                  onStartQuiz(loadedQuiz);
-                }}
-              >
-                {t("startQuiz")}
-              </Button>
-            </section>
-          ) : null}
         </section>
       </section>
     </main>

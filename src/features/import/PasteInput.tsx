@@ -43,7 +43,7 @@ export function PasteInput({
           onChange={(event) => {
             onValueChange(event.currentTarget.value);
           }}
-          placeholder="Paste quiz text here"
+          placeholder="Paste JSON or CSV quiz content here"
         />
       </label>
     </div>
