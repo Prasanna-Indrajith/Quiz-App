@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../components/Button/Button";
+import { ConfirmDialog } from "../../components/ConfirmDialog/ConfirmDialog";
 import { ProgressBar } from "../../components/ProgressBar/ProgressBar";
 import { TimerDisplay } from "../../components/TimerDisplay/TimerDisplay";
 import type { QuizAttempt } from "../../domain/attempt.types";
@@ -15,7 +16,7 @@ interface QuizPageProps {
   attempt: QuizAttempt;
   dispatch: (action: AttemptAction) => void;
   onFinish: (attempt: QuizAttempt) => void;
-  onLoadAnother: () => void;
+  onStopQuiz: () => void;
 }
 
 export function QuizPage({
@@ -23,8 +24,9 @@ export function QuizPage({
   attempt,
   dispatch,
   onFinish,
-  onLoadAnother,
+  onStopQuiz,
 }: QuizPageProps) {
+  const [isStopConfirmOpen, setIsStopConfirmOpen] = useState(false);
   useBeforeUnloadWarning(true);
 
   const elapsedSeconds = useElapsedTimer(attempt.startedAt, true);
@@ -35,10 +37,27 @@ export function QuizPage({
   );
   const answeredCount = attempt.questions.filter((item) => item.isLocked).length;
   const canFinish = answeredCount === attempt.questions.length;
+  const isLastQuestion =
+    attempt.currentQuestionIndex === attempt.questions.length - 1;
 
   useEffect(() => {
     dispatch({ type: "UPDATE_ELAPSED_TIME", elapsedSeconds });
   }, [dispatch, elapsedSeconds]);
+
+  const stopConfirmDialog = isStopConfirmOpen ? (
+    <div className="dialog-backdrop">
+      <div className="dialog-panel">
+        <ConfirmDialog
+          title="Stop quiz?"
+          message="Your current attempt will be discarded."
+          onConfirm={onStopQuiz}
+          onCancel={() => {
+            setIsStopConfirmOpen(false);
+          }}
+        />
+      </div>
+    </div>
+  ) : null;
 
   if (!question || !attemptQuestion) {
     return (
@@ -46,11 +65,22 @@ export function QuizPage({
         <section className="panel">
           <h1>{quiz.name}</h1>
           <p>Question data could not be displayed.</p>
-          <Button onClick={onLoadAnother}>Load another quiz</Button>
+          <Button
+            variant="danger"
+            onClick={() => {
+              setIsStopConfirmOpen(true);
+            }}
+          >
+            Stop quiz
+          </Button>
         </section>
+        {stopConfirmDialog}
       </main>
     );
   }
+
+  const shouldShowFinishAction =
+    isLastQuestion && attemptQuestion.isLocked && canFinish;
 
   return (
     <main className="app-shell">
@@ -63,7 +93,18 @@ export function QuizPage({
               {attempt.questions.length}
             </p>
           </div>
-          <TimerDisplay elapsedSeconds={attempt.elapsedSeconds} />
+          <div className="quiz-topbar-actions">
+            <TimerDisplay elapsedSeconds={attempt.elapsedSeconds} />
+            <Button
+              type="button"
+              variant="danger"
+              onClick={() => {
+                setIsStopConfirmOpen(true);
+              }}
+            >
+              Stop quiz
+            </Button>
+          </div>
         </div>
         <ProgressBar value={answeredCount} max={attempt.questions.length} />
 
@@ -89,8 +130,17 @@ export function QuizPage({
           <Button
             type="button"
             variant="primary"
-            disabled={!attemptQuestion.selectedAnswerId || attemptQuestion.isLocked}
+            disabled={
+              shouldShowFinishAction
+                ? false
+                : !attemptQuestion.selectedAnswerId || attemptQuestion.isLocked
+            }
             onClick={() => {
+              if (shouldShowFinishAction) {
+                onFinish({ ...attempt, elapsedSeconds });
+                return;
+              }
+
               dispatch({
                 type: "SUBMIT_ANSWER",
                 questionId: question.id,
@@ -98,14 +148,14 @@ export function QuizPage({
               });
             }}
           >
-            {t("submitAnswer")}
+            {shouldShowFinishAction ? t("finishQuiz") : t("submitAnswer")}
           </Button>
         </article>
 
-        <div className="button-row">
+        <div className="quiz-nav-row">
           <Button
             type="button"
-            className="icon-nav-button"
+            className="icon-nav-button nav-previous"
             disabled={attempt.currentQuestionIndex === 0}
             title={t("previousQuestion")}
             aria-label={t("previousQuestion")}
@@ -117,7 +167,7 @@ export function QuizPage({
           </Button>
           <Button
             type="button"
-            className="icon-nav-button"
+            className="icon-nav-button nav-next"
             disabled={attempt.currentQuestionIndex === attempt.questions.length - 1}
             title={t("nextQuestion")}
             aria-label={t("nextQuestion")}
@@ -127,27 +177,9 @@ export function QuizPage({
           >
             ›
           </Button>
-          <Button
-            type="button"
-            variant="primary"
-            disabled={!canFinish}
-            onClick={() => {
-              onFinish({ ...attempt, elapsedSeconds });
-            }}
-          >
-            {t("finishQuiz")}
-          </Button>
-          <Button
-            type="button"
-            onClick={() => {
-              if (window.confirm("Discard this active attempt?")) {
-                onLoadAnother();
-              }
-            }}
-          >
-            Load another quiz
-          </Button>
         </div>
+
+        {stopConfirmDialog}
       </section>
     </main>
   );
