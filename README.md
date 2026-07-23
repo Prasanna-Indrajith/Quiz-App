@@ -33,50 +33,6 @@ Or run all checks:
 npm run check
 ```
 
-## Desktop Packaging
-
-The app includes a minimal Electron wrapper for local desktop builds.
-
-```bash
-npm run electron:start
-```
-
-Build unpacked desktop output:
-
-```bash
-npm run desktop:dir
-```
-
-Build Linux packages:
-
-```bash
-npm run desktop:linux
-```
-
-Build a Windows installer from a supported build host:
-
-```bash
-npm run desktop:win
-```
-
-Windows installer builds from Linux may require additional system tooling such as
-Wine. Electron packaging also downloads the Electron runtime the first time it
-runs.
-
-GitHub Actions also builds desktop packages on pushes and pull requests to
-`main`. The workflow uploads Linux and Windows installers as run artifacts.
-
-To publish desktop installers for users, create and push a version tag:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-The `Release desktop apps` workflow builds Linux and Windows packages, creates a
-GitHub Release, and attaches the generated `.AppImage`, `.deb`, and `.exe`
-files.
-
 ## GitHub Pages
 
 GitHub Pages must deploy the Vite production output from `dist/`. The
