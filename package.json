@@ -2,57 +2,20 @@
   "name": "local-quiz-app",
   "private": true,
   "version": "0.1.0",
-  "description": "Local desktop quiz application for JSON and CSV quizzes.",
-  "author": {
-    "name": "Local Quiz Maintainers",
-    "email": "maintainers@localquiz.app"
-  },
+  "description": "Local browser quiz application for JSON and CSV quizzes.",
+  "author": "Local Quiz Maintainers",
   "type": "module",
-  "main": "dist-electron/main.js",
   "scripts": {
     "start": "vite --host",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "electron:compile": "tsc -p tsconfig.electron.json",
-    "electron:start": "npm run build && npm run electron:compile && electron .",
-    "desktop:dir": "npm run build && npm run electron:compile && electron-builder --dir --publish never",
-    "desktop:linux": "npm run build && npm run electron:compile && electron-builder --linux AppImage deb --publish never",
-    "desktop:win": "npm run build && npm run electron:compile && electron-builder --win nsis --publish never",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "check": "npm run lint && npm run test:run && npm run build && npm run electron:compile"
-  },
-  "build": {
-    "appId": "com.localquiz.app",
-    "productName": "Local Quiz",
-    "directories": {
-      "output": "release"
-    },
-    "files": [
-      "dist/**/*",
-      "dist-electron/**/*",
-      "package.json"
-    ],
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
-      "category": "Education"
-    },
-    "win": {
-      "target": [
-        "nsis"
-      ]
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
+    "check": "npm run lint && npm run test:run && npm run build"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
@@ -70,8 +33,6 @@
     "@types/papaparse": "^5.3.15",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "electron": "^43.2.0",
-    "electron-builder": "^26.15.3",
     "eslint": "^9.20.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-react-hooks": "^5.1.0",

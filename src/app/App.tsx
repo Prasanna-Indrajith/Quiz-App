@@ -86,7 +86,7 @@ export function App() {
           attempt={attempt}
           dispatch={dispatch}
           onFinish={finishQuiz}
-          onLoadAnother={loadAnotherQuiz}
+          onStopQuiz={loadAnotherQuiz}
         />
       ) : null}
       {view === "results" && loadedQuiz && completedAttempt ? (

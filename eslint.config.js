@@ -9,8 +9,6 @@ export default tseslint.config(
   {
     ignores: [
       "dist",
-      "dist-electron",
-      "release",
       "coverage",
       "eslint.config.js",
     ],
@@ -26,7 +24,6 @@ export default tseslint.config(
         project: [
           "./tsconfig.app.json",
           "./tsconfig.node.json",
-          "./tsconfig.electron.json",
         ],
         tsconfigRootDir: import.meta.dirname,
       },

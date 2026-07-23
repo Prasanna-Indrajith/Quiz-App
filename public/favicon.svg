@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Graduation cap and book">
+  <rect width="64" height="64" rx="14" fill="#f7f3ea"/>
+  <path d="M12 40c7-3 14-3 20 1v12c-6-4-13-4-20-1V40Z" fill="#ffffff" stroke="#1f2937" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M52 40c-7-3-14-3-20 1v12c6-4 13-4 20-1V40Z" fill="#ffffff" stroke="#1f2937" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M32 41v12" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 24l24-10 24 10-24 10L8 24Z" fill="#2f6f73" stroke="#12343b" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M21 29v8c6 4 16 4 22 0v-8" fill="#2f6f73" stroke="#12343b" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M48 27v11" stroke="#d49b2a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="48" cy="41" r="3" fill="#d49b2a"/>
+</svg>

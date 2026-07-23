@@ -145,7 +145,7 @@ textarea:focus-visible {
 
 .import-topbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   height: 36px;
   margin-bottom: 16px;
 }
@@ -194,7 +194,8 @@ textarea:focus-visible {
   text-align: center;
 }
 
-.dropzone:hover {
+.dropzone:hover,
+.dropzone-active {
   border-color: var(--color-primary);
   background: #f4fbf8;
 }
@@ -274,6 +275,35 @@ textarea:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 8px 10px;
+}
+
+.import-meta-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.quiz-ready-card {
+  display: grid;
+  gap: 4px;
+  align-content: center;
+  min-height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.quiz-ready-card span {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.quiz-ready-card strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .template-row > span {
@@ -373,6 +403,14 @@ textarea:focus-visible {
   color: var(--color-muted);
 }
 
+.quiz-topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .quiz-topbar time,
 .page-header time {
   border: 1px solid var(--color-border);
@@ -390,6 +428,39 @@ textarea:focus-visible {
   padding: 0;
   font-size: 1.55rem;
   line-height: 1;
+}
+
+.quiz-nav-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+}
+
+.nav-previous {
+  grid-column: 1;
+}
+
+.nav-next {
+  grid-column: 3;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(23 32 42 / 42%);
+  padding: 16px;
+}
+
+.dialog-panel {
+  width: min(420px, 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: white;
+  box-shadow: var(--shadow-panel);
+  padding: 20px;
 }
 
 progress {
@@ -539,7 +610,8 @@ progress {
   .page-header,
   .quiz-topbar,
   .two-column,
-  .import-grid {
+  .import-grid,
+  .import-meta-grid {
     display: grid;
     grid-template-columns: 1fr;
   }
